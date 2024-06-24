@@ -1,0 +1,193 @@
+:root{
+
+/*Primary colors*/
+--Light-red: hsl(0, 100%, 67%);
+--Orangey-yellow: hsl(39, 100%, 56%);
+--Green-teal: hsl(166, 100%, 37%);
+--Cobalt-blue: hsl(234, 85%, 45%);
+
+/*Gradients*/
+/* (background) */
+--Light-slate-blue: hsl(252, 100%, 67%);
+--Light-royal-blue: hsl(241, 81%, 54%);
+--Light-red-bg: hsl(0, 100%, 67%, 8%);
+--Orangey-yellow-bg: hsl(39, 100%, 56%, 8%);
+--Green-teal-bg: hsl(166, 100%, 37%, 8%);
+--Cobalt-blue-bg: hsl(234, 85%, 45%, 8%);
+
+/* Circle */
+--Violet-blue: hsla(256, 72%, 46%, 1);
+--Persian-blue: hsla(241, 72%, 46%, 0);
+
+/* Neutral */
+--White: hsl(0, 0%, 100%);
+--Pale-blue: hsl(221, 100%, 96%);
+--Light-lavender: hsl(241, 100%, 89%);
+--Dark--gray-blue: hsl(224, 30%, 27%);
+
+/* Body Font size */
+--font-size-paragraphs: 18px;
+
+}
+
+@font-face {
+    font-family: hankenGrotesk;
+    src: url(/assets/fonts/HankenGrotesk-VariableFont_wght.ttf)
+}
+
+* {
+    box-sizing: border-box;
+    font-family: hankenGrotesk, sans-serif;
+}
+    
+body{
+    display: grid;
+    min-height: 100vh;
+    place-items: center; /* like saying justify-items: center AND align-items: center*/
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(200px,300px));
+    box-shadow: 5px 5px 20px -3px var(--Dark--gray-blue);
+    border-radius: 30px;
+}
+
+.result{
+    background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+    border-radius: 30px;
+    text-align: center;
+}
+
+.result #yourResult{
+    color: var(--Light-lavender);
+    margin-top: 25px;
+}
+
+.result #yourScore{
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, var(--Violet-blue), var(--Persian-blue));
+    width: 170px;
+    height: 170px;
+    margin: 25px auto;
+}
+
+.result #yourScore h2{
+    color: var(--White);
+    margin: 20px auto;
+    font-size: 65px;
+    padding-top: 30px;
+}
+
+
+.result #yourScore h6{
+    color: var(--Light-lavender);
+    margin-top: -25px;
+    font-size: 16px;
+}
+
+.result #comment h2 {
+    font-size: 25px;
+    margin-top: -10px;
+    color: var(--White);
+}
+
+.result #comment p {
+    color: var(--Light-lavender);
+    margin: -10px 50px 40px;
+}
+
+.summary h2 {
+    margin: 25px 0px 25px 0px;
+}
+
+.summary {
+    margin: 0px 10px 10px 15px;
+}
+
+.summary > div {
+    display: flex;
+    justify-content: space-between; /* space between Reaction and 80/100 */
+    /* padding: 0 30px; */
+    width: 265px; /* makes other divs wrap to next line because run out of width in the container */
+    margin: -5px 5px 20px 0px;
+    padding: 0 25px 0 45px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.sumBoldNum, .sumBoldWord{
+    font-weight: bold;
+}
+
+.summary #reaction {
+    background-color: var(--Light-red-bg);
+    color: var(--Light-red);
+    box-shadow: (10px 10px);
+}
+
+.summary #memory {
+    background-color: var(--Orangey-yellow-bg);
+    color: var(--Orangey-yellow);
+}
+
+.summary #verbal {
+    background-color: var(--Green-teal-bg);
+    color: var(--Green-teal);
+}
+
+.summary #visual {
+    background-color: var(--Cobalt-blue-bg);
+    color: var(--Cobalt-blue);
+}
+
+.summary div p:first-of-type::before {
+    position: absolute;
+    left: 15px;
+}
+
+
+.summary #reaction p:first-of-type:before{
+    content: url(assets/images/icon-reaction.svg);
+}
+
+.summary #memory p:first-of-type:before{
+    content: url(assets/images/icon-memory.svg);
+}
+
+.summary #verbal p:first-of-type:before{
+    content: url(assets/images/icon-verbal.svg);
+}
+
+.summary #visual p:first-of-type:before{
+    content: url(assets/images/icon-visual.svg);
+}
+
+.summary button {
+    font-size: 15px;
+    transition: 0.3s linear;
+    color: var(--White);
+    background-color: var(--Dark--gray-blue);
+    outline: none;
+    width: 265px;
+    border: none;
+    border-radius: 20px;
+    min-height: 50px;
+    margin: 10px 0px 20px; 
+    letter-spacing: 1px;
+}
+
+.summary button:hover{
+    background-color: var(--Light-royal-blue);
+    cursor: pointer;
+}
+
+@media (max-width: 450px){
+    .container {
+        grid-template-columns: minmax(200px,300px);
+    }
+}
+
+
+
+
